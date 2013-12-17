@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'NGTabBarController' target in the 'NGTabBarController' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+// From here to end of file added by Injection Plugin //
+
+#ifdef DEBUG
+#define INJECTION_ENABLED
+#import "/Users/xcode/Library/Application Support/Developer/Shared/Xcode/Plug-ins/InjectionPlugin5.xcplugin/Contents/Resources/BundleInterface.h"
+#endif
