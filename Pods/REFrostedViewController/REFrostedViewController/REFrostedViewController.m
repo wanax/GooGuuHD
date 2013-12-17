@@ -30,7 +30,7 @@
 #import "UIViewController+REFrostedViewController.h"
 #import "RECommonFunctions.h"
 
-#define MinimumMenuViewSize 300
+#define MinimumMenuViewSize 200
 
 @interface REFrostedViewController ()
 
@@ -198,6 +198,10 @@
 - (BOOL)shouldAutorotate
 {
     return self.contentViewController.shouldAutorotate;
+}
+
+- (NSUInteger)supportedInterfaceOrientations{
+    return self.contentViewController.supportedInterfaceOrientations;
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

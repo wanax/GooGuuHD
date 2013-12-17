@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8A5B5A59F6984D628AD70DDF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B649E3378074894981CC885 /* libPods.a */; };
+		AE206239185FEF040004908B /* settingTableBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE206238185FEF040004908B /* settingTableBack.png */; };
+		AE20623E185FF56D0004908B /* valueModelCellBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE20623C185FF56D0004908B /* valueModelCellBack.png */; };
+		AE20623F185FF56D0004908B /* valueModelCellBack3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE20623D185FF56D0004908B /* valueModelCellBack3.png */; };
+		AE206241185FFADB0004908B /* aboutUsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = AE206240185FFADA0004908B /* aboutUsLogo.png */; };
 		AE346B69185E8D7B005D9F75 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE346B68185E8D7B005D9F75 /* Crashlytics.framework */; };
 		AE4D3E0017E3053C0044A7DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D3DFF17E3053C0044A7DF /* UIKit.framework */; };
 		AE4D3E0217E3053C0044A7DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4D3E0117E3053C0044A7DF /* Foundation.framework */; };
@@ -49,7 +53,6 @@
 		AE899F88185EF38400731AC8 /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE899F87185EF38400731AC8 /* AgreementViewController.m */; };
 		AE899F8B185EF97C00731AC8 /* SettingCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = AE899F8A185EF97C00731AC8 /* SettingCell2.m */; };
 		AE899F8D185EF99A00731AC8 /* SettingCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE899F8C185EF99A00731AC8 /* SettingCell2.xib */; };
-		AE899F95185F02AB00731AC8 /* settingTableBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AE899F94185F02AB00731AC8 /* settingTableBack.png */; };
 		AE8B44FC1820EC400047F4BB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8B44FB1820EC400047F4BB /* CoreText.framework */; };
 		AE8B450A182101BE0047F4BB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8B4509182101BE0047F4BB /* Accelerate.framework */; };
 		AEAD74EA17EE93B200A659FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAD74E917EE93B200A659FA /* QuartzCore.framework */; };
@@ -305,8 +308,6 @@
 		AECEEBE0185EBC30006B8A7D /* rightViewBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBCD185EBC30006B8A7D /* rightViewBack.png */; };
 		AECEEBE1185EBC30006B8A7D /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBCF185EBC30006B8A7D /* down.png */; };
 		AECEEBE2185EBC30006B8A7D /* riseup.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBD0185EBC30006B8A7D /* riseup.png */; };
-		AECEEBE3185EBC30006B8A7D /* valueModelCellBack.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBD1185EBC30006B8A7D /* valueModelCellBack.png */; };
-		AECEEBE4185EBC30006B8A7D /* valueModelCellBack3.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBD2185EBC30006B8A7D /* valueModelCellBack3.png */; };
 		AECEEBE9185EBC68006B8A7D /* concernmodel.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBE5185EBC68006B8A7D /* concernmodel.png */; };
 		AECEEBEA185EBC68006B8A7D /* savemodel.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBE6185EBC68006B8A7D /* savemodel.png */; };
 		AECEEBEB185EBC68006B8A7D /* unconcernmodel.png in Resources */ = {isa = PBXBuildFile; fileRef = AECEEBE7185EBC68006B8A7D /* unconcernmodel.png */; };
@@ -334,6 +335,10 @@
 /* Begin PBXFileReference section */
 		2B649E3378074894981CC885 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3340E439CB96480F951F8362 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AE206238185FEF040004908B /* settingTableBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingTableBack.png; sourceTree = "<group>"; };
+		AE20623C185FF56D0004908B /* valueModelCellBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueModelCellBack.png; sourceTree = "<group>"; };
+		AE20623D185FF56D0004908B /* valueModelCellBack3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueModelCellBack3.png; sourceTree = "<group>"; };
+		AE206240185FFADA0004908B /* aboutUsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutUsLogo.png; sourceTree = "<group>"; };
 		AE346B68185E8D7B005D9F75 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		AE4D3DFC17E3053C0044A7DF /* googuuhd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googuuhd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4D3DFF17E3053C0044A7DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -344,8 +349,8 @@
 		AE5E0A2E1845EBFE00A9ABE8 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		AE5E0A511845F1C200A9ABE8 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../../download/code/core-plot-master/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		AE6034E5185F0B1C0081AD36 /* HELP.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HELP.html; sourceTree = "<group>"; };
-		AE6034E9185F0C430081AD36 /* TouristViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouristViewController.h; sourceTree = "<group>"; };
-		AE6034EA185F0C430081AD36 /* TouristViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouristViewController.m; sourceTree = "<group>"; };
+		AE6034E9185F0C430081AD36 /* TouristViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouristViewController.h; path = ../TouristViewController.h; sourceTree = "<group>"; };
+		AE6034EA185F0C430081AD36 /* TouristViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouristViewController.m; path = ../TouristViewController.m; sourceTree = "<group>"; };
 		AE899F29185ECD5700731AC8 /* UIFont+CoreTextExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+CoreTextExtensions.h"; sourceTree = "<group>"; };
 		AE899F2A185ECD5700731AC8 /* UIFont+CoreTextExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+CoreTextExtensions.m"; sourceTree = "<group>"; };
 		AE899F2C185ECD5700731AC8 /* AKOMultiColumnTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKOMultiColumnTextView.h; sourceTree = "<group>"; };
@@ -399,7 +404,6 @@
 		AE899F89185EF97C00731AC8 /* SettingCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell2.h; sourceTree = "<group>"; };
 		AE899F8A185EF97C00731AC8 /* SettingCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell2.m; sourceTree = "<group>"; };
 		AE899F8C185EF99A00731AC8 /* SettingCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingCell2.xib; path = ../../NibFile/CellNib/SettingCell2.xib; sourceTree = "<group>"; };
-		AE899F94185F02AB00731AC8 /* settingTableBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingTableBack.png; sourceTree = "<group>"; };
 		AE8B44FB1820EC400047F4BB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		AE8B4509182101BE0047F4BB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		AEAD74E917EE93B200A659FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -860,8 +864,6 @@
 		AECEEBCD185EBC30006B8A7D /* rightViewBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightViewBack.png; sourceTree = "<group>"; };
 		AECEEBCF185EBC30006B8A7D /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		AECEEBD0185EBC30006B8A7D /* riseup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = riseup.png; sourceTree = "<group>"; };
-		AECEEBD1185EBC30006B8A7D /* valueModelCellBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueModelCellBack.png; sourceTree = "<group>"; };
-		AECEEBD2185EBC30006B8A7D /* valueModelCellBack3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valueModelCellBack3.png; sourceTree = "<group>"; };
 		AECEEBE5185EBC68006B8A7D /* concernmodel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = concernmodel.png; sourceTree = "<group>"; };
 		AECEEBE6185EBC68006B8A7D /* savemodel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = savemodel.png; sourceTree = "<group>"; };
 		AECEEBE7185EBC68006B8A7D /* unconcernmodel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unconcernmodel.png; sourceTree = "<group>"; };
@@ -1242,7 +1244,8 @@
 		AECEE835185E9CC3006B8A7D /* SettingImg */ = {
 			isa = PBXGroup;
 			children = (
-				AE899F94185F02AB00731AC8 /* settingTableBack.png */,
+				AE206240185FFADA0004908B /* aboutUsLogo.png */,
+				AE206238185FEF040004908B /* settingTableBack.png */,
 				AE899F84185EE32200731AC8 /* settingBack.png */,
 				AECEEBED185EBC76006B8A7D /* title_googuu.png */,
 				AECEE836185E9CC3006B8A7D /* checkBoxImg.png */,
@@ -1737,8 +1740,6 @@
 				AECEEB4D185EA78D006B8A7D /* SettingMenuViewController.m */,
 				AECEEB4E185EA78D006B8A7D /* SettingNavigationController.h */,
 				AECEEB4F185EA78D006B8A7D /* SettingNavigationController.m */,
-				AE6034E9185F0C430081AD36 /* TouristViewController.h */,
-				AE6034EA185F0C430081AD36 /* TouristViewController.m */,
 			);
 			path = UserSetting;
 			sourceTree = "<group>";
@@ -1944,6 +1945,8 @@
 				AECEEBB0185EAA81006B8A7D /* UserInfoViewController.m */,
 				AE899F86185EF38400731AC8 /* AgreementViewController.h */,
 				AE899F87185EF38400731AC8 /* AgreementViewController.m */,
+				AE6034E9185F0C430081AD36 /* TouristViewController.h */,
+				AE6034EA185F0C430081AD36 /* TouristViewController.m */,
 			);
 			path = ClientCenterVC;
 			sourceTree = "<group>";
@@ -1987,10 +1990,10 @@
 		AECEEBCE185EBC30006B8A7D /* ValueModelImg */ = {
 			isa = PBXGroup;
 			children = (
+				AE20623C185FF56D0004908B /* valueModelCellBack.png */,
+				AE20623D185FF56D0004908B /* valueModelCellBack3.png */,
 				AECEEBCF185EBC30006B8A7D /* down.png */,
 				AECEEBD0185EBC30006B8A7D /* riseup.png */,
-				AECEEBD1185EBC30006B8A7D /* valueModelCellBack.png */,
-				AECEEBD2185EBC30006B8A7D /* valueModelCellBack3.png */,
 			);
 			path = ValueModelImg;
 			sourceTree = "<group>";
@@ -2071,7 +2074,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AECEEBE4185EBC30006B8A7D /* valueModelCellBack3.png in Resources */,
 				AECEEBD6185EBC30006B8A7D /* blueArrow@2x.png in Resources */,
 				AECEEA1B185E9CC4006B8A7D /* 折现率-2.png in Resources */,
 				AECEEA2E185E9CC4006B8A7D /* EXCEL.png in Resources */,
@@ -2086,7 +2088,6 @@
 				AECEEB2E185EA5A1006B8A7D /* googuuhd-Info.plist in Resources */,
 				AE899F83185EDDAE00731AC8 /* Default@2x.png in Resources */,
 				AECEEB37185EA5A1006B8A7D /* BPushConfig.plist in Resources */,
-				AE899F95185F02AB00731AC8 /* settingTableBack.png in Resources */,
 				AECEEBE0185EBC30006B8A7D /* rightViewBack.png in Resources */,
 				AECEEA30185E9CC4006B8A7D /* finToolRightBack.png in Resources */,
 				AECEEA9C185E9CC4006B8A7D /* Prefix.pch.save in Resources */,
@@ -2173,10 +2174,11 @@
 				AECEE9FA185E9CC4006B8A7D /* googuuViewBtSe.png in Resources */,
 				AECEEBD5185EBC30006B8A7D /* blueArrow.png in Resources */,
 				AECEEAB6185E9CC4006B8A7D /* Cell1.xib in Resources */,
-				AECEEBE3185EBC30006B8A7D /* valueModelCellBack.png in Resources */,
+				AE20623E185FF56D0004908B /* valueModelCellBack.png in Resources */,
 				AECEEA48185E9CC4006B8A7D /* excelShortcuts.png in Resources */,
 				AECEEBBC185EB044006B8A7D /* center.png in Resources */,
 				AECEE9F6185E9CC4006B8A7D /* dailyStockBtSe.png in Resources */,
+				AE206241185FFADB0004908B /* aboutUsLogo.png in Resources */,
 				AECEEB3B185EA5A1006B8A7D /* netrequesturl.plist in Resources */,
 				AE899F82185EDDAE00731AC8 /* Default.png in Resources */,
 				AE899F7F185EDADF00731AC8 /* newReportBtSe.png in Resources */,
@@ -2188,11 +2190,13 @@
 				AE899F40185ECD5700731AC8 /* selectionIndicatorImage.png in Resources */,
 				AECEEB30185EA5A1006B8A7D /* calu.html in Resources */,
 				AECEEAA1185E9CC4006B8A7D /* POPDCell.xib in Resources */,
+				AE206239185FEF040004908B /* settingTableBack.png in Resources */,
 				AECEEBDE185EBC30006B8A7D /* newReportCellBack.png in Resources */,
 				AECEEA68185E9CC4006B8A7D /* GooGuuViewCell.xib in Resources */,
 				AECEEB38185EA5A1006B8A7D /* colorconfigure.plist in Resources */,
 				AE6034E6185F0B1C0081AD36 /* HELP.html in Resources */,
 				AECEEA13185E9CC4006B8A7D /* UpAccessory.png in Resources */,
+				AE20623F185FF56D0004908B /* valueModelCellBack3.png in Resources */,
 				AECEEBDD185EBC30006B8A7D /* newReportBackImg.png in Resources */,
 				AE899F85185EE32200731AC8 /* settingBack.png in Resources */,
 				AECEEBD4185EBC30006B8A7D /* blackArrow@2x.png in Resources */,

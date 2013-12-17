@@ -80,7 +80,7 @@
     
     if(self.comList){
         id comInfo=[self.comList objectAtIndex:indexPath.row][@"info"];
-        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@.%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"marketname"]];
+        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@ (%@.%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"marketname"]];
 
         [cell.saveImg setImage:[UIImage imageNamed:@"unsavemodel"]];
         [cell.concernImg setImage:[UIImage imageNamed:@"unconcernmodel"]];
@@ -127,8 +127,8 @@
         NSMutableArray *tempGrade2=[[[NSMutableArray alloc] init] autorelease];
         float g=[comInfo[@"info"][@"googuuprice"] floatValue];
         float p = [comInfo[@"info"][@"marketprice"] floatValue];
-        [tempGrade2 addObject:[self makeAProgress:p max:p+g frame:CGRectMake(390,8,180,18) color:[UIColor orangeColor]]];
-        [tempGrade2 addObject:[self makeAProgress:g max:p+g frame:CGRectMake(390,34,180,18) color:[UIColor purpleColor]]];
+        [tempGrade2 addObject:[self makeAProgress:p max:p+g frame:CGRectMake(390,8,180,18) color:[UIColor peterRiverColor]]];
+        [tempGrade2 addObject:[self makeAProgress:g max:p+g frame:CGRectMake(390,34,180,18) color:[UIColor orangeColor]]];
         [temp addObject:tempGrade2];
     }
     self.progressArr=temp;

@@ -389,7 +389,8 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
 -(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolWasSelectedAtRecordIndex:(NSUInteger)idx{
     for (id identifier in self.identifiers) {
         if ([identifier isEqual:(NSString *)plot.identifier]) {
-            [Utiles showToastView:self.view withTitle:identifier andContent:self.dhDic[identifier][idx][@"desc"] duration:2.5];
+            NSString *title = [NSString stringWithFormat:@"%@(%@)",identifier,self.dhDic[identifier][idx][@"date"]];
+            [Utiles showToastView:self.view withTitle:title andContent:self.dhDic[identifier][idx][@"desc"] duration:3];
             return;
         }
     }
@@ -433,11 +434,16 @@ static NSString * HISTORY_DATALINE_IDENTIFIER =@"历史股价";
     }else{
         NSNumberFormatter * formatter   = (NSNumberFormatter *)axis.labelFormatter;
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        [formatter setPositiveFormat:@"##"];
         NSMutableSet * newLabels        = [NSMutableSet set];
 
         for (NSDecimalNumber * tickLocation in locations) {
 
+            if ([tickLocation integerValue] > 10) {
+                [formatter setPositiveFormat:@"##"];
+            } else {
+                [formatter setPositiveFormat:@"##.#"];
+            }
+            
             CPTMutableTextStyle * newStyle = [[axis.labelTextStyle mutableCopy] autorelease];
             newStyle.fontSize=15.0;
             newStyle.fontName=@"Heiti SC";

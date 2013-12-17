@@ -17,8 +17,8 @@
         
         [self setBackgroundColor:[Utiles colorWithHexString:@"#291912"]];
         [self addLabel:@"上市公司" frame:CGRectMake(0,0,135,60)];
-        [self addLabel:@"关注收藏" frame:CGRectMake(135,0,100,60)];
-        [self addLabel:@"公司名称(代码)" frame:CGRectMake(235,0,230,60)];
+        //[self addLabel:@"关注收藏" frame:CGRectMake(135,0,100,60)];
+        [self addLabel:@"公司名称(代码)" frame:CGRectMake(135,0,330,60)];
         [self addLabel:@"市场价VS估股价" frame:CGRectMake(465,0,300,60)];
         [self addLabel:@"潜在空间" frame:CGRectMake(765,0,155,60)];
     }

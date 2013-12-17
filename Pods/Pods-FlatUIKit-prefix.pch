@@ -8,5 +8,5 @@
 
 #ifdef DEBUG
 #define INJECTION_ENABLED
-#import "/Users/xcode/Library/Application Support/Developer/Shared/Xcode/Plug-ins/InjectionPlugin5.xcplugin/Contents/Resources/BundleInterface.h"
+#import "/Applications/Injection Plugin.app/Contents/Resources/BundleInterface.h"
 #endif

@@ -24,6 +24,6 @@
 @property (nonatomic,strong) id comInfo;
 @property (nonatomic,retain) NSTimer *loginTimer;
 @property BOOL isReachable;
-//@property (nonatomic,retain) id<LeftBarDelegate> delegate;
+
 
 @end

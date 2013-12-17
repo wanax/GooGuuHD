@@ -51,5 +51,23 @@
     
 }
 
++(void)userLogoutcallBack:(void(^)(id obj))block{
+    NSString *token= [Utiles getUserToken];
+    if(token){
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserToken"];
+        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                                token, @"token",@"googuu",@"from",
+                                nil];
+        [Utiles postNetInfoWithPath:@"LogOut" andParams:params besidesBlock:^(id info){
+            block(info);
+        } failure:^(AFHTTPRequestOperation *operation,NSError *error){
+            NSLog(@"%@",error);
+        }];
+        
+    }else{
+        NSLog(@"logout failed");
+    }
+}
+
 
 @end

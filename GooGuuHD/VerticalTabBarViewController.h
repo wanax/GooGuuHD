@@ -15,7 +15,10 @@
 
 @property (nonatomic,retain) SearchComListViewController *searchListVC;
 
+@property (nonatomic,retain) UIButton *loginBt;
 @property (nonatomic,retain) UIPopoverController *popVC;
 @property (nonatomic,retain) UISearchBar *searchBar;
+
+-(void)configureLoginBt;
 
 @end

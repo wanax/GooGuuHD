@@ -24,5 +24,5 @@ static char _inMainFilePath[] = __FILE__;
 static const char *_inIPAddresses[] = {"127.0.0.1", "192.168.137.199", "192.168.1.106", NULL};
 
 #define INJECTION_ENABLED
-#import "/Users/xcode/Library/Application Support/Developer/Shared/Xcode/Plug-ins/InjectionPlugin5.xcplugin/Contents/Resources/BundleInjection.h"
+#import "/Applications/Injection Plugin.app/Contents/Resources/BundleInjection.h"
 #endif

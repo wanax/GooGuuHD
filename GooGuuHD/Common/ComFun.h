@@ -12,4 +12,6 @@
 
 +(void)userLoginUserName:(NSString *)userName pwd:(NSString *)pwd callBack:(void(^)(id obj))block;
 
++(void)userLogoutcallBack:(void(^)(id obj))block;
+
 @end

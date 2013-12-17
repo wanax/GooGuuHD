@@ -32,6 +32,10 @@
 
 @implementation VerticalTabBarViewController
 
+-(void)viewDidAppear:(BOOL)animated {
+    [self configureLoginBt];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -40,6 +44,7 @@
 
 -(void)questionBtClicked:(UIButton *)bt{
     TouristViewController *tt = [[[TouristViewController alloc] init] autorelease];
+    tt.modalPresentationStyle = UIModalPresentationPageSheet;
     [self presentViewController:tt animated:YES completion:nil];
 }
 
@@ -80,6 +85,19 @@
     
 }
 
+-(void)configureLoginBt {
+    if ([Utiles isLogin]) {
+        [self.loginBt setFrame:CGRectMake(60,14,200,30)];
+        id userInfo = [GetUserDefaults(@"UserInfo") objectFromJSONString];
+        [self.loginBt setTitle:userInfo[@"info"][@"nickname"] forState:UIControlStateDisabled];
+        self.loginBt.enabled = NO;
+    } else {
+        self.loginBt.enabled = YES;
+        [self.loginBt setTitle:@"登录" forState:UIControlStateNormal];
+        [self.loginBt setFrame:CGRectMake(60,14,60,30)];
+    }
+}
+
 -(void)initComponents{
     
     self.delegate = self;
@@ -100,20 +118,12 @@
     [questionBt addTarget:self action:@selector(questionBtClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:questionBt];
     
-    UIButton *loginBt=[UIButton buttonWithType:UIButtonTypeCustom];
+    self.loginBt=[UIButton buttonWithType:UIButtonTypeCustom];
     
-    if ([Utiles isLogin]) {
-        [loginBt setFrame:CGRectMake(60,14,200,30)];
-        id userInfo = [GetUserDefaults(@"UserInfo") objectFromJSONString];
-        [loginBt setTitle:userInfo[@"info"][@"nickname"] forState:UIControlStateDisabled];
-        loginBt.enabled = NO;
-    } else {
-        [loginBt setTitle:@"登录" forState:UIControlStateNormal];
-        [loginBt setFrame:CGRectMake(60,14,60,30)];
-    }
+    [self configureLoginBt];
     
-    [loginBt addTarget:self action:@selector(loginBtClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:loginBt];
+    [self.loginBt addTarget:self action:@selector(loginBtClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.loginBt];
     
     UISearchBar *bar=[[[UISearchBar alloc] initWithFrame:CGRectMake(770,00,240,55)] autorelease];
     bar.delegate=self;

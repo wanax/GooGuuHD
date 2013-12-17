@@ -55,7 +55,7 @@
 #define GetUserDefaults(A) [[NSUserDefaults standardUserDefaults] objectForKey:A]
 
 #define UserDefaults [NSUserDefaults standardUserDefaults]
-#define Application [UIApplication sharedApplication]
+#define GooGuuDelegate [[UIApplication sharedApplication] delegate]
 
 
 

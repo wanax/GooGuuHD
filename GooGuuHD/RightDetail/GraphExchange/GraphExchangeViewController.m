@@ -34,7 +34,7 @@
 
 -(void)initComponents{
     
-    [self addLabel:@"金融图汇" frame:CGRectMake(45,15,80,30) size:18.0 color:@"#e6cbc0"];
+    [self addLabel:@"金融图汇" frame:CGRectMake(45,15,80,30) size:20.0 color:@"#e6cbc0"];
     [self addLabel:@"是不是看腻了大把的文字描述？来\"金融图汇放松一下，这里汇聚了各大媒体对金融数据和现象的图解解读，金融图谱虽简，洞悉经济生活。\"" frame:CGRectMake(45,55,600,50) size:18.0 color:@"#ffffff"];
     [self addLabel:@"热门标签" frame:CGRectMake(65,115,80,30) size:14.0 color:@"#e6cbc0"];
     UIImageView *tagImg=[[[UIImageView alloc] initWithFrame:CGRectMake(45,122,15,15)] autorelease];
@@ -48,20 +48,32 @@
     bar.barTintColor=[UIColor clearColor];
     [self.view addSubview:bar];
     
-    [self addButtons:@"全部" fun:@selector(tagBtClicked:) frame:CGRectMake(130,115,70,30)];
-    [self addButtons:@"中国" fun:@selector(tagBtClicked:) frame:CGRectMake(220,115,70,30)];
-    [self addButtons:@"互联网" fun:@selector(tagBtClicked:) frame:CGRectMake(300,115,70,30)];
-    [self addButtons:@"经济" fun:@selector(tagBtClicked:) frame:CGRectMake(380,115,70,30)];
-    [self addButtons:@"投资" fun:@selector(tagBtClicked:) frame:CGRectMake(460,115,70,30)];
-    [self addButtons:@"营销" fun:@selector(tagBtClicked:) frame:CGRectMake(540,115,70,30)];
-    [self addButtons:@"美国" fun:@selector(tagBtClicked:) frame:CGRectMake(620,115,70,30)];
-    [self addButtons:@"房地产" fun:@selector(tagBtClicked:) frame:CGRectMake(700,115,70,30)];
+    [self getTopTag];
     
     FinancePicViewController *picVC=[[[FinancePicViewController alloc] init] autorelease];
     [picVC.view setFrame:CGRectMake(30,150,725,865)];
     [self.view addSubview:picVC.view];
     [self addChildViewController:picVC];
     self.delegate=picVC;
+    
+}
+
+-(void)getTopTag {
+    
+    [Utiles getNetInfoWithPath:@"GetTopTag" andParams:nil besidesBlock:^(id obj) {
+        
+        int n = 130,m=0;
+        for (id tag in obj) {
+            if ((m++) > 8) {
+                break;
+            }
+            [self addButtons:tag[@"keyword"] fun:@selector(tagBtClicked:) frame:CGRectMake(n,115,70,30)];
+            n += 80;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",error);
+    }];
     
 }
 

@@ -53,7 +53,7 @@
             if([obj[@"unit"] isEqualToString:@"1000.0"]){
                 [formatter setPositiveFormat:@"#,###"];
             }else if([obj[@"unit"] isEqualToString:@"%"]){
-                [formatter setPositiveFormat:@"0.00%;0.00%;-0.00%"];
+                [formatter setPositiveFormat:@"0.00%"];
             }else if([obj[@"unit"] isEqualToString:@"1.0"]){
                 [formatter setPositiveFormat:@"##0.0"];
             } else if ([obj[@"unit"] isEqualToString:@"1000000.0"]){

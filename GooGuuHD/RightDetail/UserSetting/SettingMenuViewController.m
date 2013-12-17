@@ -16,8 +16,13 @@
 #import "FeedBackViewController.h"
 #import "DisclaimersViewController.h"
 #import "AboutUsViewController.h"
+#import "VerticalTabBarViewController.h"
 
 @implementation SettingMenuViewController
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self.cusTable reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -25,9 +30,9 @@
     
     self.sections = @[@"登录/注册",@"清除缓存",@"意见反馈",@"新版本检测",@"使用说明",@"免责声明",@"关于我们"];
     
-    UITableView *teT=[[[UITableView alloc] initWithFrame:CGRectMake(0,60,300,568)] autorelease];
+    UITableView *teT=[[[UITableView alloc] initWithFrame:CGRectMake(0,60,200,568)] autorelease];
     self.cusTable=teT;
-    self.cusTable.backgroundColor = [Utiles colorWithHexString:@"#170D0A"];
+    self.cusTable.backgroundColor = [Utiles colorWithHexString:@"#23120c"];
     self.cusTable.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.cusTable.delegate = self;
     self.cusTable.dataSource = self;
@@ -35,7 +40,7 @@
     self.cusTable.opaque = NO;
     self.cusTable.backgroundColor = [UIColor blackColor];
     
-    UIImageView *tableBack = [[[UIImageView alloc] initWithFrame:CGRectMake(0,0,300,768)] autorelease];
+    UIImageView *tableBack = [[[UIImageView alloc] initWithFrame:CGRectMake(0,0,200,768)] autorelease];
     [tableBack setImage:[UIImage imageNamed:@"settingTableBack"]];
     [self.view addSubview:tableBack];
     
@@ -50,10 +55,9 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*cell.backgroundColor = [Utiles colorWithHexString:@"#170D0A"];
-    cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
-    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;*/
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.contentView.backgroundColor = [Utiles colorWithHexString:@"#351C13"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -78,70 +82,79 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //展开的二级cell配置，对“新版本检测”使用单独配置
     if (self.isOpen&&self.selectIndex.section == indexPath.section&&indexPath.row!=0) {
         
         if (indexPath.section == 3) {
-            
-            static NSString *CellIdentifier = @"SettingCellIdentifier";
-            SettingCell *cell = (SettingCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            static NSString *Grade2CellIdentifier = @"Grade2CellIdentifier";
+            SettingCell *cell = (SettingCell *)[tableView dequeueReusableCellWithIdentifier:Grade2CellIdentifier];
             
             if (!cell) {
-                cell = [[[SettingCell alloc] initWithReuseIdentifier:CellIdentifier cellName:self.sections[indexPath.section]] autorelease];
+                cell = [[[SettingCell alloc] initWithReuseIdentifier:@"SettingCellIdentifier" cellName:self.sections[indexPath.section]] autorelease];
             }
-
             return cell;
-            
         } else {
-            static NSString *CellIdentifier = @"Cell2";
-            UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            
-            if (!cell) {
-                cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-            }
-            cell.textLabel.text = @"subtitle";
-            return cell;
+            return Nil;
         }
 
     }else{
-        static NSString *SettingCell2Identifier = @"SettingCell2Identifier";
+        //一级cell配置
+        static NSString *MainCellIdentifier = @"MainCellIdentifier";
         
-        SettingCell2 *cell = (SettingCell2 *)[tableView dequeueReusableCellWithIdentifier:SettingCell2Identifier];
+        UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:MainCellIdentifier];
         
         if (!cell) {
-            cell = [[[NSBundle mainBundle] loadNibNamed:@"SettingCell2" owner:self options:nil] objectAtIndex:0];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MainCellIdentifier] autorelease];
         }
-        [cell.itemBt setTitle:self.sections[indexPath.section] forState:UIControlStateNormal];
-        cell.itemBt.tag = indexPath.section;
-        [cell.itemBt addTarget:self action:@selector(itemBtClicked:) forControlEvents:UIControlEventTouchUpInside];
-        
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            
+            if ([Utiles isLogin]) {
+                cell.textLabel.text = @"注销";
+            } else {
+                cell.textLabel.text = self.sections[indexPath.section];
+            }
+            
+        } else {
+            cell.textLabel.text = self.sections[indexPath.section];
+        }
         return cell;
     }
 }
 
 #pragma mark - Table view delegate
 
--(void)itemBtClicked:(UIButton *)bt {
-    
-    int section = bt.tag;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    int section = indexPath.section;
     
     UINavigationController *navigationController = (UINavigationController *)self.frostedViewController.contentViewController;
     if (section == 0) {
-        
-        ClientLoginViewController *homeViewController = [[[ClientLoginViewController alloc] init] autorelease];
-        homeViewController.sourceType=SettingMenu;
-        [navigationController pushViewController:homeViewController animated:YES];
-        [self.frostedViewController hideMenuViewController];
-        
+        if ([Utiles isLogin]) {
+            [ComFun userLogoutcallBack:^(id obj) {
+                if ([[obj objectForKey:@"status"] isEqualToString:@"1"]){
+                    [Utiles ToastNotification:@"注销成功" andView:self.view andLoading:NO andIsBottom:NO andIsHide:YES];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"LogOut" object:nil];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UserToken"];
+                    [tableView reloadData];
+                    AppDelegate *delegate = GooGuuDelegate;
+                    VerticalTabBarViewController *tabbar = delegate.verTabBar;
+                    [tabbar configureLoginBt];
+                } else if([[obj objectForKey:@"status"] isEqualToString:@"0"]) {
+                    NSLog(@"logout failed:%@",[obj objectForKey:@"msg"]);
+                }
+            }];
+        } else {
+            ClientLoginViewController *homeViewController = [[[ClientLoginViewController alloc] init] autorelease];
+            homeViewController.sourceType=SettingMenu;
+            [navigationController pushViewController:homeViewController animated:YES];
+            [self.frostedViewController hideMenuViewController];
+        }
     } else if (section == 1) {
-        sleep(1);
         [Utiles showToastView:self.view withTitle:nil andContent:@"清除成功" duration:1.0];
     } else if (section == 2) {
-        
         FeedBackViewController *feedBack = [[[FeedBackViewController alloc] init] autorelease];
         feedBack.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:feedBack animated:YES completion:nil];
-        
     } else if (section == 3) {
         if ([indexPath isEqual:self.selectIndex]) {
             self.isOpen = NO;
@@ -156,30 +169,19 @@
             }
         }
     } else if (section == 4) {
-        
         DisclaimersViewController *dis = [[[DisclaimersViewController alloc] init] autorelease];
         dis.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:dis animated:YES completion:nil];
-        
     } else if (section == 5) {
-        
         DisclaimersViewController *dis = [[[DisclaimersViewController alloc] init] autorelease];
         dis.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:dis animated:YES completion:nil];
-        
     } else if (section == 6) {
-        
         AboutUsViewController *about = [[[AboutUsViewController alloc] init] autorelease];
         about.modalPresentationStyle = UIModalPresentationFormSheet;
         [self presentViewController:about animated:YES completion:nil];
-        
     }
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

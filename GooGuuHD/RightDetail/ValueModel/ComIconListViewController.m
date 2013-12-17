@@ -11,6 +11,7 @@
 #import "ComInfoListColumn1.h"
 #import "ComListController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ComContainerViewController.h"
 
 @interface ComIconListViewController ()
 
@@ -109,17 +110,31 @@
             [cell.comNameLabel setBackgroundColor:[UIColor whiteColor]];
             [cell.comNameLabel setText:self.comList[indexPath.row][@"info"][@"companyname"]];
             cell.comNameLabel.layer.cornerRadius=3.0;
+        } else {
+            [cell.comNameLabel setBackgroundColor:[UIColor clearColor]];
+            cell.comNameLabel.text = @"";
         }
     }];
     
     return cell;
 }
 
+#pragma mark -
+#pragma Table Methods Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ComContainerViewController *comContainerVC=[[[ComContainerViewController alloc] init] autorelease];
+    UINavigationController *comNav=[[[UINavigationController alloc] initWithRootViewController:comContainerVC] autorelease];
+    comContainerVC.comInfo=[self.comList objectAtIndex:indexPath.row][@"info"];
+    [self presentViewController:comNav animated:YES completion:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    /*for(ComInfoListColumn *column in self.comTableArr){
+    for(ComInfoListColumn *column in self.comTableArr){
         column.comTable.contentOffset=scrollView.contentOffset;
-    }*/
+    }
     self.comListController.contentOffset=scrollView.contentOffset;
     
 }

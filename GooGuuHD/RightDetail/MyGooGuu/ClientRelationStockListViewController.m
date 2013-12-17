@@ -147,9 +147,15 @@
     
     if(self.comList){
         id comInfo=[self.comList objectAtIndex:indexPath.row];
-        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@\n(%@%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"market"]];
+        cell.comTitleLabel.text=[comInfo objectForKey:@"companyname"]==nil?@"":[NSString stringWithFormat:@"%@ (%@%@)",[comInfo objectForKey:@"companyname"],[comInfo objectForKey:@"stockcode"],[comInfo objectForKey:@"market"]];
         if(![Utiles isBlankString:[comInfo objectForKey:@"comanylogourl"]]){
-           [cell.comIconImg setImageWithURL:[NSURL URLWithString:[comInfo objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+            cell.comNameLabel.text = @"";
+            cell.comNameLabel.backgroundColor = [UIColor clearColor];
+            [cell.comIconImg setImageWithURL:[NSURL URLWithString:[comInfo objectForKey:@"comanylogourl"]] placeholderImage:[UIImage imageNamed:@"defaultIcon"]];
+        } else {
+            [cell.comNameLabel setBackgroundColor:[UIColor whiteColor]];
+            [cell.comNameLabel setText:comInfo[@"companyname"]];
+            cell.comNameLabel.layer.cornerRadius=3.0;
         }
         [cell.saveImg setImage:[UIImage imageNamed:@"unsavemodel"]];
         [cell.concernImg setImage:[UIImage imageNamed:@"unconcernmodel"]];

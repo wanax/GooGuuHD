@@ -23,11 +23,26 @@
     return self;
 }
 
+-(void)viewDisMiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIButton *bt = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [bt setTitle:@"确定" forState:UIControlStateNormal];
+    [bt setFrame:CGRectMake(20,8,60,30)];
+    bt.titleLabel.textAlignment = NSTextAlignmentLeft;
+    bt.titleLabel.font = [UIFont fontWithName:@"Heiti SC" size:16.0];
+    [bt addTarget:self action:@selector(viewDisMiss) forControlEvents:UIControlEventTouchUpInside];
+    bt.backgroundColor = [UIColor carrotColor];
+    [bt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.view addSubview:bt];
 	
-    UIWebView *web = [[[UIWebView alloc] initWithFrame:CGRectMake(0,0 , 768,600)] autorelease];
+    UIWebView *web = [[[UIWebView alloc] initWithFrame:CGRectMake(0,45,770,725)] autorelease];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"HELP" ofType:@"html"];
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];
     [self.view addSubview:web];

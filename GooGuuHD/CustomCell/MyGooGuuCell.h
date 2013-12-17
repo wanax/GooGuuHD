@@ -14,6 +14,7 @@
 @property (nonatomic,retain) IBOutlet UIImageView *comIconImg;
 @property (nonatomic,retain) IBOutlet UIImageView *concernImg;
 @property (nonatomic,retain) IBOutlet UIImageView *saveImg;
+@property (nonatomic,retain) IBOutlet UILabel *comNameLabel;
 @property (nonatomic,retain) IBOutlet UILabel *comTitleLabel;
 @property (nonatomic,retain) IBOutlet UILabel *outLookLabel;
 @property (nonatomic,retain) IBOutlet UIImageView *outLookImg;
