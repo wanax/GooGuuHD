@@ -43,7 +43,8 @@
     [self.view addSubview:bt];
 	
     UIWebView *web = [[[UIWebView alloc] initWithFrame:CGRectMake(0,45,770,725)] autorelease];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"HELP" ofType:@"html"];
+    web.scrollView.showsVerticalScrollIndicator = NO;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"iPadHelp" ofType:@"htm"];
     [web loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath: path]]];
     [self.view addSubview:web];
 }

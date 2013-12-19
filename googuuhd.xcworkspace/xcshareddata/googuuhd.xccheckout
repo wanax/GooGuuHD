@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BC521C4B-3203-430D-8CA2-342BF3EB1FC2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>googuuhd</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FB43CE09-ECB9-4226-AC94-93862E553E86</key>
+		<string>https://github.com/wanax/GooGuuHD.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>googuuhd.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FB43CE09-ECB9-4226-AC94-93862E553E86</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wanax/GooGuuHD.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FB43CE09-ECB9-4226-AC94-93862E553E86</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FB43CE09-ECB9-4226-AC94-93862E553E86</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GooGuuHD</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -17,6 +17,7 @@
 #import "DisclaimersViewController.h"
 #import "AboutUsViewController.h"
 #import "VerticalTabBarViewController.h"
+#import "TouristViewController.h"
 
 @implementation SettingMenuViewController
 
@@ -169,8 +170,8 @@
             }
         }
     } else if (section == 4) {
-        DisclaimersViewController *dis = [[[DisclaimersViewController alloc] init] autorelease];
-        dis.modalPresentationStyle = UIModalPresentationFormSheet;
+        TouristViewController *dis = [[[TouristViewController alloc] init] autorelease];
+        dis.modalPresentationStyle = UIModalPresentationPageSheet;
         [self presentViewController:dis animated:YES completion:nil];
     } else if (section == 5) {
         DisclaimersViewController *dis = [[[DisclaimersViewController alloc] init] autorelease];
